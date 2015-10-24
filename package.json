@@ -1,6 +1,6 @@
 {
 	"name": "postcss-unmq",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Remove media queries from CSS while preserving rules that match a hard-coded viewport",
 	"keywords": [
 		"postcss",
@@ -26,15 +26,20 @@
 	"homepage": "https://github.com/jonathantneal/postcss-unmq",
 	"dependencies": {
 		"css-mediaquery": "^0.1.2",
-		"postcss": "^5.0.2"
+		"postcss": "^5.0.10"
 	},
-	"devDependencies": {
-		"chai": "^3.2.0",
-		"gulp": "^3.9.0",
-		"gulp-eslint": "^1.0.0",
-		"gulp-mocha": "^2.1.3"
-	},
-	"scripts": {
-		"test": "gulp"
-	}
+  "devDependencies": {
+    "eslint": "^1.7.3",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.2"
+  },
+  "scripts": {
+    "lint": "eslint . --ignore-path .gitignore",
+    "test-fixtures": "tape test/*.js | tap-spec",
+    "test": "npm run lint && npm run test-fixtures"
+  },
+  "engines": {
+    "iojs": ">=2.0.0",
+    "node": ">=0.12.0"
+  }
 }

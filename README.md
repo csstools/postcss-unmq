@@ -2,7 +2,7 @@
 
 <img align="right" width="135" height="95" src="http://postcss.github.io/postcss/logo-leftp.png" title="Philosopher’s stone, logo of PostCSS">
 
-[PostCSS UnMQ] is a [PostCSS] plugin that removes media queries from CSS while preserving rules that match a hard-coded viewport. This can be useful for outputting desktop CSS for old browsers like Internet Explorer 8.
+[PostCSS UnMQ] removes media queries from CSS while preserving rules that match a hard-coded viewport. This can be useful for outputting desktop CSS for older browsers like Internet Explorer 8.
 
 ```css
 /* before */
@@ -32,35 +32,71 @@ body {
 body {
     color: #444;
 }
-
 ```
 
 ## Usage
 
-You just need to follow these two steps to use [PostCSS UnMQ]:
+Add [UnMQ] to your build tool:
 
-1. Add [PostCSS] to your build tool.
-2. Add [PostCSS UnMQ] as a PostCSS process.
-
-```sh
+```bash
 npm install postcss-unmq --save-dev
 ```
 
-### Node
+#### Node
 
 ```js
-postcss([ require('postcss-unmq')({ /* options */ }) ])
+require('postcss-unmq')({ /* options */ }).process(YOUR_CSS);
 ```
 
-### Grunt
+#### PostCSS
+
+Add [PostCSS] to your build tool:
+
+```bash
+npm install postcss --save-dev
+```
+
+Load [UnMQ] as a PostCSS plugin:
+
+```js
+postcss([
+    require('postcss-unmq')({ /* options */ })
+]);
+```
+
+#### Gulp
+
+Add [Gulp PostCSS] to your build tool:
+
+```bash
+npm install gulp-postcss --save-dev
+```
+
+Enable [UnMQ] within your Gulpfile:
+
+```js
+var postcss = require('gulp-postcss');
+
+gulp.task('css', function () {
+    return gulp.src('./css/src/*.css').pipe(
+        postcss([
+            require('postcss-unmq')({ /* options */ })
+        ])
+    ).pipe(
+        gulp.dest('./css')
+    );
+});
+```
+
+#### Grunt
 
 Add [Grunt PostCSS] to your build tool:
 
-```sh
-npm install postcss-unmq --save-dev
+```bash
+npm install grunt-postcss --save-dev
 ```
 
-Enable [PostCSS UnMQ] within your Gruntfile:
+Enable [UnMQ] within your Gruntfile:
 
 ```js
 grunt.loadNpmTasks('grunt-postcss');
@@ -78,28 +114,6 @@ grunt.initConfig({
     }
 });
 ```
-
-### Gulp
-
-1. Add [Gulp PostCSS] to your build tool:
-   ```sh
-   npm install --save-dev gulp-postcss
-   ```
-
-2. Use [PostCSS UnMQ] in your Gulpfile:
-   ```js
-   var postcss = require('gulp-postcss');
-
-   gulp.task('css', function () {
-      return gulp.src('./css/src/*.css').pipe(
-         postcss([
-            require('postcss-unmq')({ /* options */ })
-         ])
-      ).pipe(
-         gulp.dest('./css')
-      );
-   });
-   ```
 
 ## Options
 
@@ -120,7 +134,7 @@ If it’s not defined, `device-width` will be given the value of `width`, and `d
 
 [ci]: https://travis-ci.org/jonathantneal/postcss-unmq
 [ci-img]: https://travis-ci.org/jonathantneal/postcss-unmq.svg
-[Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
+[Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
 [PostCSS]: https://github.com/postcss/postcss
-[PostCSS UnMQ]: https://github.com/jonathantneal/postcss-unmq
+[UnMQ]: https://github.com/jonathantneal/postcss-unmq

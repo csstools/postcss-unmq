@@ -1,0 +1,35 @@
+@media screen and (min-width: 30em) {
+	a {
+		min-width: 30em;
+	}
+}
+
+@media screen and (min-width: 60em) {
+	a {
+		min-width: 60em;
+	}
+}
+
+@media screen and (max-width: 30em) {
+	a {
+		max-width: 30em;
+	}
+}
+
+@media screen and (max-width: 60em) {
+	a {
+		max-width: 60em;
+	}
+}
+
+@media screen and (min-aspect-ratio: 1) {
+	a {
+		line-height: 2;
+	}
+}
+
+@media screen and (max-aspect-ratio: 1) {
+	a {
+		line-height: .5;
+	}
+}
