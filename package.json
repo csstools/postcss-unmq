@@ -1,6 +1,6 @@
 {
 	"name": "postcss-unmq",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Remove media queries from CSS while preserving rules that match a hard-coded viewport",
 	"keywords": [
 		"postcss",

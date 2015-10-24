@@ -1,8 +1,8 @@
-# PostCSS UnMQ [![Build Status][ci-img]][ci]
+# UnMQ [![Build Status][ci-img]][ci]
 
 <img align="right" width="135" height="95" src="http://postcss.github.io/postcss/logo-leftp.png" title="Philosopher’s stone, logo of PostCSS">
 
-[PostCSS UnMQ] removes media queries from CSS while preserving rules that match a hard-coded viewport. This can be useful for outputting desktop CSS for older browsers like Internet Explorer 8.
+[UnMQ] removes media queries from CSS while preserving rules that match a hard-coded viewport. This can be useful for outputting desktop CSS for older browsers like Internet Explorer 8.
 
 ```css
 /* before */
