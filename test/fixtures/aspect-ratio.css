@@ -1,0 +1,5 @@
+@media screen and (max-aspect-ratio: 2/1) {
+	body {
+		background: black;
+	}
+}

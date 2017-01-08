@@ -8,6 +8,9 @@ var tests = {
 			options: {
 				width: 320
 			}
+		},
+		'aspect-ratio': {
+			message: 'supports aspect-ratio usage'
 		}
 	}
 };
